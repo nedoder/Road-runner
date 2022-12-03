@@ -67,8 +67,8 @@
 </template>
 <style scoped>
 .contact-overlay {
-  height: 100vh;
-  background: url("../assets/contact.jpg");
+  min-height: 100vh;
+  background: url("../assets/contact.webp");
   background-size: cover;
   -webkit-background-size: cover;
   background-repeat: no-repeat;
@@ -80,16 +80,17 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 105vh;
+  min-height: 100vh;
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
 }
 
 .contact {
   width: 80%;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   column-gap: 1rem;
@@ -97,12 +98,12 @@
 .contact-info {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  padding: 3rem 0;
+  padding: 7rem 0 3rem 0;
   align-items: baseline;
   column-gap: 1rem;
+  row-gap: 1rem;
   color: #fff;
-  width: 50%;
+  width: 48%;
 }
 
 .contact-title {
@@ -124,7 +125,7 @@
   padding: 1rem 0;
 }
 .contact-form {
-  width: 50%;
+  width: 48%;
   padding: 2rem;
   background-color: var(--color-1);
 }
@@ -153,5 +154,12 @@
 }
 .contact-form button:hover {
   cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .contact-info,
+  .contact-form {
+    width: 100%;
+  }
 }
 </style>

@@ -10,7 +10,7 @@
     <div class="carrier">
       <div class="carrier-info">
         <h2>
-          <span class="carrier-span">Ready to start ?</span>
+          <span class="carrier-span">Ready to start</span>
           We thrive for <span class="highlight">greatness</span>
         </h2>
         <p>
@@ -110,7 +110,7 @@
 <style scoped>
 .carrier-wrapper {
   height: 70vh;
-  background: url("../assets/carrier.jpg");
+  background: url("../assets/carrier.webp");
   background-size: cover;
   -webkit-background-size: cover;
   background-repeat: no-repeat;
@@ -148,15 +148,16 @@
   column-gap: 1rem;
   justify-content: flex-start;
   align-items: center;
+  flex-wrap: wrap;
 }
 .carrier-info h2 {
   font-size: 3rem;
-  width: 50%;
+  width: 48%;
 }
 
 .carrier-info p {
   padding: 1rem 0;
-  width: 50%;
+  width: 48%;
   font-size: 1.4rem;
 }
 
@@ -184,6 +185,7 @@
   padding: 3rem 0;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   column-gap: 1rem;
@@ -196,11 +198,12 @@
   justify-content: flex-start;
   align-items: center;
   column-gap: 1rem;
-  width: 100%;
+  width: 23%;
   color: var(--color-1);
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1.4rem;
+  text-align: center;
 }
 
 .carrier-benefits svg {
@@ -245,5 +248,21 @@
 }
 .carrier-form button:hover {
   cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .carrier-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .carrier-info h2,
+  .carrier-info p {
+    width: 100%;
+  }
+  .carrier-benefits p {
+    width: 48%;
+  }
 }
 </style>

@@ -10,7 +10,7 @@
     <div class="services">
       <div class="services-info">
         <h2>
-          <span class="services-span">What we offer ?</span>
+          <span class="services-span">What we offer</span>
           Reliable partner in <span class="highlight">transport</span> & <span class="highlight">logistics</span>
         </h2>
         <p>
@@ -23,7 +23,7 @@
       <span class="services-span">Services we provide</span>
       <router-link to="/full-truckload" exact class="service-item">
         <div class="service-image">
-          <img src="../assets/4.jpg" />
+          <img src="../assets/truck.webp" />
         </div>
         <div class="service-title">
           <p>Full Truck Load</p>
@@ -31,7 +31,7 @@
       </router-link>
       <router-link to="/drayage-service" exact class="service-item">
         <div class="service-image">
-          <img src="../assets/5.jpg" />
+          <img src="../assets/drayage.webp" />
         </div>
         <div class="service-title">
           <p>Drayage</p>
@@ -39,7 +39,7 @@
       </router-link>
       <router-link to="/hazmat-trucking" exact class="service-item">
         <div class="service-image">
-          <img src="../assets/2.jpg" />
+          <img src="../assets/hazmat.webp" />
         </div>
         <div class="service-title">
           <p>Hazmat</p>
@@ -47,7 +47,7 @@
       </router-link>
       <router-link to="/expedited-shipping" exact class="service-item">
         <div class="service-image">
-          <img src="../assets/3.jpg" />
+          <img src="../assets/expedited.webp" />
         </div>
         <div class="service-title">
           <p>Expedited</p>
@@ -55,7 +55,7 @@
       </router-link>
       <router-link to="/ltl-shipping" exact class="service-item">
         <div class="service-image">
-          <img src="../assets/6.jpg" />
+          <img src="../assets/ltl.webp" />
         </div>
         <div class="service-title">
           <p>LTL</p>
@@ -68,7 +68,7 @@
 <style scoped>
 .services-wrapper {
   height: 70vh;
-  background: url("../assets/services.jpg");
+  background: url("../assets/services.webp");
   background-size: cover;
   -webkit-background-size: cover;
   background-repeat: no-repeat;
@@ -134,8 +134,7 @@
 
 .service-list .services-span {
   top: -2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
 }
 
 .service-list {
@@ -188,5 +187,24 @@
 .service-item:hover {
   transform: scale(0.9, 0.9);
   box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
+}
+
+@media (max-width: 992px) {
+  .services-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .services-info h2,
+  .services-info p {
+    width: 100%;
+  }
+}
+
+@media (max-width: 350px) {
+  .service-item {
+    width: 15rem;
+    height: 15rem;
+  }
 }
 </style>

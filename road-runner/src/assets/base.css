@@ -65,6 +65,7 @@ h4,
 h5,
 h6 {
   font-family: "Anton", sans-serif;
+  line-height: 3rem;
 }
 
 a,
@@ -92,7 +93,7 @@ button {
 
 .service-page {
   height: 70vh;
-  background: url("../assets/4.jpg");
+  background: url("../assets/truckcover.webp");
   background-size: cover;
   -webkit-background-size: cover;
   background-repeat: no-repeat;
@@ -101,7 +102,7 @@ button {
 }
 
 .service-section {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -126,6 +127,7 @@ button {
 
 .service-section h2 {
   font-size: 3rem;
+  padding: 2rem 0;
 }
 
 .service-section h3 {
@@ -151,6 +153,9 @@ button {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  width: 80%;
+  margin: 0 auto;
+  column-gap: 2rem;
 }
 .service-sections {
   width: 70%;
@@ -187,4 +192,15 @@ button {
 
 .service-links h4 {
   font-size: 2rem;
+}
+
+@media (max-width: 992px) {
+
+  .service-flex {
+    flex-direction: column;
+  }
+  .service-sections,
+  .service-contact {
+    width: 100%;
+  }
 }

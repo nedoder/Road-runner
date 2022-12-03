@@ -156,12 +156,14 @@ ul {
   justify-content: space-between;
   align-items: baseline;
   flex-direction: row;
+  flex-wrap: wrap;
   column-gap: 2rem;
+  row-gap: 2rem;
 }
 
 .column {
   padding: 3rem 0;
-  width: 33.3%;
+  width: 31%;
 }
 
 .copyright-area .column {
@@ -170,15 +172,12 @@ ul {
 .column svg {
   width: 3rem;
 }
-
-.single-cta i {
-  color: #ff5e14;
-  font-size: 30px;
-  float: left;
-  margin-top: 8px;
+.single-cta {
+  display: flex;
+  flex-direction: row;
 }
 .cta-text {
-  padding-left: 15px;
+  padding-left: 1rem;
   display: inline-block;
 }
 .cta-text h4 {
@@ -340,5 +339,23 @@ ul {
 
 .right-column {
   text-align: right;
+}
+
+@media (max-width: 1200px) {
+  .column {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .right-column {
+    display: none;
+  }
+}
+
+@media (max-width: 350px) {
+  .subscribe-form p {
+    font-size: 0.8rem;
+    padding: 1rem 2rem 1rem 0.7rem;
+  }
 }
 </style>

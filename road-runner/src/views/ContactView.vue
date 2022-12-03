@@ -80,7 +80,7 @@
 <style scoped>
 .contact-wrapper {
   height: 70vh;
-  background: url("../assets/contact-us.jpg");
+  background: url("../assets/contact-us.webp");
   background-size: cover;
   -webkit-background-size: cover;
   background-repeat: no-repeat;
@@ -91,6 +91,7 @@
   width: 80%;
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   column-gap: 1rem;
@@ -121,6 +122,7 @@
 
 .contact-info h2 {
   font-size: 3rem;
+  padding-bottom: 2rem;
 }
 
 .contact-info p {
@@ -142,13 +144,11 @@
 
 .contact-info,
 .contact-form {
-  width: 50%;
+  width: 49%;
 }
 
 .contact-form {
-  width: 50%;
   padding: 2rem;
-  /* background-color: var(--color-1); */
 }
 
 .contact-form span {
@@ -181,5 +181,20 @@
 }
 .contact-form button:hover {
   cursor: pointer;
+}
+
+@media (max-width: 992px) {
+
+  .contact {
+    padding: 5rem 0;
+  }
+  .contact-info,
+  .contact-form {
+    width: 100% !important;
+  }
+
+  .contact-form {
+    padding: 2rem 0;
+  }
 }
 </style>

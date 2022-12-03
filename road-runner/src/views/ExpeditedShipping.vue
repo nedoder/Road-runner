@@ -9,7 +9,7 @@
     <div class="service-flex">
       <div class="service-sections">
         <div class="service-section">
-          <img src="../assets/3.jpg" />
+          <img src="../assets/expedited-img.webp" />
           <h2>Faster than standard</h2>
           <p>
             Expedited shipping service is a type of shipping that involves using
@@ -50,4 +50,13 @@
     </div>
   </main>
 </template>
-<style scoped></style>
+<style scoped>
+.service-page {
+  background: url("../assets/expeditedcover.webp");
+  background-size: cover;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}
+</style>

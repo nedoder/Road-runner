@@ -9,7 +9,7 @@
     <div class="service-flex">
       <div class="service-sections">
         <div class="service-section">
-          <img src="../assets/3.jpg" />
+          <img src="../assets/fulltruck.webp" />
           <h2>Dry Van, Reefer, Flatbed</h2>
           <p>
             Full truckload service, commonly referred to as FTL, is a type of

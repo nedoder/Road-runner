@@ -9,7 +9,7 @@
     <div class="service-flex">
       <div class="service-sections">
         <div class="service-section">
-          <img src="../assets/3.jpg" />
+          <img src="../assets/services.webp" />
           <h2>
             Whether your import or export shipment needs to move to or from a port
             or warehouse, we will find the right solution.
@@ -50,4 +50,13 @@
     </div>
   </main>
 </template>
-<style scoped></style>
+<style scoped>
+.service-page {
+  background: url("../assets/drayagecover.webp");
+  background-size: cover;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}
+</style>

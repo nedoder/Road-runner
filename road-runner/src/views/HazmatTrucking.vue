@@ -9,7 +9,7 @@
     <div class="service-flex">
       <div class="service-sections">
         <div class="service-section">
-          <img src="../assets/3.jpg" />
+          <img src="../assets/hazmat-img.webp" />
           <h2>Expert hazmat trucking transport</h2>
           <p>
             Hazmat trucking is the transport of hazardous materials, which could be
@@ -54,4 +54,13 @@
     </div>
   </main>
 </template>
-<style scoped></style>
+<style scoped>
+.service-page {
+  background: url("../assets/hazmatcover.webp");
+  background-size: cover;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}
+</style>

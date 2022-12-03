@@ -9,7 +9,7 @@
     <div class="service-flex">
       <div class="service-sections">
         <div class="service-section">
-          <img src="../assets/3.jpg" />
+          <img src="../assets/ltl-img.webp" />
           <h2>Dry Van, Reefer, Flatbed</h2>
           <p>
             Less than truckload freight shipping (LTL) is used for the
@@ -48,4 +48,13 @@
     </div>
   </main>
 </template>
-<style scoped></style>
+<style scoped>
+.service-page {
+  background: url("../assets/ltlcover.webp");
+  background-size: cover;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}
+</style>

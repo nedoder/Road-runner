@@ -128,17 +128,19 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 7rem 0;
+  padding: 7rem 0 3rem 0;
 }
 
 .service-info,
 .services-items {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
   padding: 3rem 0;
   align-items: baseline;
   column-gap: 1rem;
+  row-gap: 2rem;
 }
 
 .service-title {
@@ -190,5 +192,28 @@
 
 .service-content svg {
   width: 3rem;
+}
+
+@media (max-width: 1200px) {
+  .service-info h2,
+  .service-info p {
+    width: 100%;
+  }
+
+  .service-item {
+    width: 31%;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-item {
+    width: 48%;
+  }
+}
+
+@media (max-width: 500px) {
+  .service-item {
+    width: 100%;
+  }
 }
 </style>

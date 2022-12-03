@@ -1,9 +1,14 @@
 <script setup></script>
 <template>
   <div class="about">
-    <img src="../assets/about.jpg" />
+    <img src="../assets/about.webp" />
     <div class="about-info">
-      <h2><span class="about-title">about company</span>Unique freight<span class="highlight"> brokerage </span>company</h2>
+      <h2>
+        <span class="about-title">about company</span>
+        Unique freight
+        <span class="highlight"> brokerage </span>
+        company
+      </h2>
       <p>
         <strong>
           Super Ego connects customers with shipping needs with carriers that have the available capacity and service offerings.
@@ -16,7 +21,6 @@
   </div>
 </template>
 <style scoped>
-
 .about {
   width: 80%;
   margin: 0 auto;
@@ -36,7 +40,7 @@
   flex-direction: column;
   width: 100%;
   padding: 3rem 0;
-  align-items: center;
+  align-items: flex-start;
   column-gap: 1rem;
   background-image: url("../assets/usa.webp");
   background-position: center;
@@ -44,7 +48,6 @@
   -webkit-background-size: contain;
   background-repeat: no-repeat;
 }
-
 
 .about-title {
   position: absolute;
@@ -63,5 +66,23 @@
   font-weight: 600;
   display: block;
   padding: 1rem 0;
+}
+
+.about-info a {
+  padding: 1rem;
+  color: var(--color-2);
+  border: 1px solid var(--color-2);
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1200px) {
+  .about img {
+    display: none;
+  }
+
+  .about-info {
+    align-items: start;
+  }
 }
 </style>

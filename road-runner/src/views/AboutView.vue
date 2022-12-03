@@ -10,7 +10,7 @@ import PartnerList from '../components/PartnerList.vue';
       </div>
     </div>
     <div class="about-intro">
-      <img src="../assets/about-care.jpg" />
+      <img src="../assets/about-care.webp" />
       <div class="about-info">
         <h2>
           <span class="about-span">We care more</span>
@@ -38,9 +38,7 @@ import PartnerList from '../components/PartnerList.vue';
     <div class="about-mission">
       <div class="mission-info">
         <h2>
-          <span class="about-span">
-            OUR MISSION IS TO GIVE YOU GOOD SERVICES
-          </span>
+          <span class="about-span">OUR MISSION</span>
           Our <span class="highlight">promises</span> to you
         </h2>
         <p>
@@ -61,7 +59,7 @@ import PartnerList from '../components/PartnerList.vue';
           Join us today!
         </router-link>
       </div>
-      <img src="../assets/about-mission.jpg" />
+      <img src="../assets/about-mission.webp" />
     </div>
     <div class="partner-list">
       <PartnerList />
@@ -72,7 +70,7 @@ import PartnerList from '../components/PartnerList.vue';
 <style>
 .about-wrapper {
   height: 70vh;
-  background: url("../assets/about-us.jpg");
+  background: url("../assets/about-us.webp");
   background-size: cover;
   -webkit-background-size: cover;
   background-repeat: no-repeat;
@@ -166,5 +164,12 @@ import PartnerList from '../components/PartnerList.vue';
 
 .join-link:hover {
   cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .about-intro img,
+  .about-mission img {
+    display: none;
+  }
 }
 </style>

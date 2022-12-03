@@ -35,7 +35,7 @@ let timer = setInterval(async () => {
 <style scoped>
 main {
   height: 100vh;
-  background: url("../assets/hero.jpg");
+  background: url("../assets/hero.webp");
   background-size: cover;
   -webkit-background-size: cover;
   background-repeat: no-repeat;
