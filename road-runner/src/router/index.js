@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 const router = createRouter({
   mode: "history",
   history: createWebHistory(import.meta.env.BASE_URL),
-  linkExactActiveClass: "exact-active",
+  linkExactActiveClass: "active",
   scrollBehavior(to) {
     if (to.hash) {
       return window.scrollTo(0, document.body.scrollHeight);
@@ -22,13 +22,18 @@ const router = createRouter({
       component: () => import("../views/AboutView.vue"),
     },
     {
-      path: "/ltl-freight-shipping",
-      name: "ltl-freight-shipping",
+      path: "/services",
+      name: "services",
+      component: () => import("../views/ServicesView.vue"),
+    },
+    {
+      path: "/ltl-shipping",
+      name: "ltl-shipping",
       component: () => import("../views/LtlShipping.vue"),
     },
     {
-      path: "/full-truckload-service",
-      name: "full-truckload-service",
+      path: "/full-truckload",
+      name: "full-truckload",
       component: () => import("../views/FullTruckload.vue"),
     },
     {
@@ -42,8 +47,8 @@ const router = createRouter({
       component: () => import("../views/HazmatTrucking.vue"),
     },
     {
-      path: "/expedited-shipping-service",
-      name: "expedited-shipping-service",
+      path: "/expedited-shipping",
+      name: "expedited-shipping",
       component: () => import("../views/ExpeditedShipping.vue"),
     },
     {
