@@ -1,4 +1,7 @@
-<script setup></script>
+<script setup>
+const name = "";
+const message = "";
+</script>
 <template>
   <div class="contact-overlay">
     <div class="contact-wrapper">
@@ -77,10 +80,10 @@
 }
 
 .contact-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-height: 100vh;
+  /* position: absolute; */
+  /* top: 0;
+  left: 0; */
+  /* bottom: 0; */
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
 }
@@ -160,6 +163,16 @@
   .contact-info,
   .contact-form {
     width: 100%;
+  }
+
+  .contact-form {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-info h2 {
+    padding: 3rem 0;
   }
 }
 </style>

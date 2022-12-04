@@ -21,41 +21,41 @@
     </div>
     <div class="service-list">
       <span class="services-span">Services we provide</span>
-      <router-link to="/full-truckload" exact class="service-item">
+      <router-link to="/full-truckload" exact class="service-item" aria-label="Full truckload" >
         <div class="service-image">
-          <img src="../assets/truck.webp" />
+          <img src="../assets/truck.webp" alt="Full truckload" />
         </div>
         <div class="service-title">
           <p>Full Truck Load</p>
         </div>
       </router-link>
-      <router-link to="/drayage-service" exact class="service-item">
+      <router-link to="/drayage-service" exact class="service-item" aria-label="Drayage">
         <div class="service-image">
-          <img src="../assets/drayage.webp" />
+          <img src="../assets/drayage.webp" alt="Drayage" />
         </div>
         <div class="service-title">
           <p>Drayage</p>
         </div>
       </router-link>
-      <router-link to="/hazmat-trucking" exact class="service-item">
+      <router-link to="/hazmat-trucking" exact class="service-item" aria-label="Hazmat">
         <div class="service-image">
-          <img src="../assets/hazmat.webp" />
+          <img src="../assets/hazmat.webp" alt="Hazmat" />
         </div>
         <div class="service-title">
           <p>Hazmat</p>
         </div>
       </router-link>
-      <router-link to="/expedited-shipping" exact class="service-item">
+      <router-link to="/expedited-shipping" exact class="service-item" aria-label="Expedited shipping" >
         <div class="service-image">
-          <img src="../assets/expedited.webp" />
+          <img src="../assets/expedited.webp" alt="Expedited shipping" />
         </div>
         <div class="service-title">
           <p>Expedited</p>
         </div>
       </router-link>
-      <router-link to="/ltl-shipping" exact class="service-item">
+      <router-link to="/ltl-shipping" exact class="service-item" aria-label="Ltl shipping" >
         <div class="service-image">
-          <img src="../assets/ltl.webp" />
+          <img src="../assets/ltl.webp" alt="Expedited shipping" />
         </div>
         <div class="service-title">
           <p>LTL</p>

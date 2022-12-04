@@ -5,12 +5,12 @@
       <span class="join">JOIN THE LIST</span>
       <h2>Partners that <span class="highlight">trust</span> us</h2>
       <div class="partners">
-        <img src="../assets/logo.svg" />
-        <img src="../assets/logo.svg" />
-        <img src="../assets/logo.svg" />
-        <img src="../assets/logo.svg" />
-        <img src="../assets/logo.svg" />
-        <img src="../assets/logo.svg" />
+        <img src="../assets/logo.svg"  alt="Partners logo" />
+        <img src="../assets/logo.svg"  alt="Partners logo" />
+        <img src="../assets/logo.svg"  alt="Partners logo" />
+        <img src="../assets/logo.svg"  alt="Partners logo" />
+        <img src="../assets/logo.svg"  alt="Partners logo" />
+        <img src="../assets/logo.svg"  alt="Partners logo" />
       </div>
     </div>
   </div>

@@ -9,7 +9,7 @@
     <div class="service-flex">
       <div class="service-sections">
         <div class="service-section">
-          <img src="../assets/hazmat-img.webp" />
+          <img src="../assets/hazmat-img.webp" alt="Hazmat" />
           <h2>Expert hazmat trucking transport</h2>
           <p>
             Hazmat trucking is the transport of hazardous materials, which could be
@@ -39,16 +39,16 @@
       <div class="service-links">
         <div class="service-link">
           <h4>Services</h4>
-          <router-link to="full-truckload" exact>Full Truck Load</router-link>
-          <router-link to="drayage-service" exact>Drayage</router-link>
-          <router-link to="hazmat-trucking" exact>Hazmat</router-link>
-          <router-link to="expedited-shipping" exact>Expedited</router-link>
-          <router-link to="ltl-shipping" exact>Ltl</router-link>
+          <router-link to="full-truckload" exact arrow="Full truckload">Full Truck Load</router-link>
+          <router-link to="drayage-service" exact aria-label="Drayage">Drayage</router-link>
+          <router-link to="hazmat-trucking" exact aria-label="Hazmat">Hazmat</router-link>
+          <router-link to="expedited-shipping" exact aria-label="Expedited">Expedited</router-link>
+          <router-link to="ltl-shipping" exact aria-label="Ltl">Ltl</router-link>
         </div>
         <div class="service-contact">
           <h4>Need more information?</h4>
           <p>Feel free to drop us a message.</p>
-          <router-link to="contact">Contact us</router-link>
+          <router-link to="contact" aria-label="Contact">Contact us</router-link>
         </div>
       </div>
     </div>

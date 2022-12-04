@@ -5,12 +5,12 @@ import PartnerList from '../components/PartnerList.vue';
 <template>
   <main>
     <div class="about-wrapper">
-      <div class="about-title">
+      <div class="aboutview-title">
         <h1>About <span class="highlight">Road runner</span></h1>
       </div>
     </div>
     <div class="about-intro">
-      <img src="../assets/about-care.webp" />
+      <img src="../assets/about-care.webp" alt="About" />
       <div class="about-info">
         <h2>
           <span class="about-span">We care more</span>
@@ -55,11 +55,11 @@ import PartnerList from '../components/PartnerList.vue';
           <li>97% On-Time Pickup and Delivery</li>
           <li>Dedicated Operations Support</li>
         </ul>
-        <router-link to="/carrier" class="join-link" exact>
+        <router-link to="/carrier" class="join-link" exact aria-label="Join us">
           Join us today!
         </router-link>
       </div>
-      <img src="../assets/about-mission.webp" />
+      <img src="../assets/about-mission.webp" alt="Our mission"/>
     </div>
     <div class="partner-list">
       <PartnerList />
@@ -87,7 +87,7 @@ import PartnerList from '../components/PartnerList.vue';
   padding: 2rem 0;
 }
 
-.about-title {
+.aboutview-title {
   position: absolute;
   width: 80%;
   bottom: 0;
@@ -96,7 +96,7 @@ import PartnerList from '../components/PartnerList.vue';
   padding: 7rem 0;
 }
 
-.about-title h1 {
+.aboutview-title h1 {
   font-size: 3rem;
   color: var(--white);
 }

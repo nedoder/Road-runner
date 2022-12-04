@@ -3,9 +3,6 @@ import { ref } from "vue";
 const button = ref();
 const text = ref();
 const links = document.getElementsByClassName("menu__text");
-window.addEventListener("resize", () => {
-  setLineWidth(text.value, button.value);
-});
 
 function clickBtn(e) {
   Array.from(links).forEach((link) => {
@@ -16,14 +13,13 @@ function clickBtn(e) {
   e.currentTarget.lastChild.classList.add("active");
 }
 
-function setLineWidth(text, button) {
-  const lineWidth = text.value.offsetWidth + "px";
-  button.value.style.setProperty("--lineWidth", lineWidth);
-}
+// onMounted(() => {
+//   clickBtn()
+// })
 </script>
 <template>
   <menu class="menu">
-    <router-link class="menu__item" to="/" exact @click="clickBtn" ref="button">
+    <router-link class="menu__item" to="/" exact @click="clickBtn" ref="button" aria-label="Home">
       <div class="menu__icon" >
         <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <g id="home-anm">
@@ -34,7 +30,7 @@ function setLineWidth(text, button) {
       </div>
       <strong class="menu__text" ref="text">home</strong>
     </router-link>
-    <router-link class="menu__item" to="/about" exact @click="clickBtn" ref="button">
+    <router-link class="menu__item" to="/about" exact @click="clickBtn" ref="button" aria-label="About">
       <div class="menu__icon" >
         <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <g id="strategy-anm">
@@ -45,7 +41,7 @@ function setLineWidth(text, button) {
       </div>
       <strong class="menu__text"  ref="text">about</strong>
     </router-link>
-    <router-link to="/services" class="menu__item" exact @click="clickBtn" ref="button">
+    <router-link to="/services" class="menu__item" exact @click="clickBtn" ref="button" aria-label="Services">
       <div class="menu__icon" >
         <svg class="icon"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <g id="period-anm">
@@ -56,7 +52,7 @@ function setLineWidth(text, button) {
       </div>
       <strong class="menu__text"  ref="text">services</strong>
     </router-link>
-    <router-link to="/carrier" class="menu__item" exact @click="clickBtn" ref="button">
+    <router-link to="/carrier" class="menu__item" exact @click="clickBtn" ref="button" aria-label="Carrier">
       <div class="menu__icon" >
         <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <g id="security-cir">
@@ -68,7 +64,7 @@ function setLineWidth(text, button) {
       </div>
       <strong class="menu__text"  ref="text">carriers</strong>
     </router-link>
-    <router-link to="/contact" class="menu__item" exact @click="clickBtn" ref="button">
+    <router-link to="/contact" class="menu__item" exact @click="clickBtn" ref="button" aria-label="Contact">
       <div class="menu__icon" >
         <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <g id="settings-anm" >
@@ -102,9 +98,9 @@ function setLineWidth(text, button) {
   -webkit-tap-highlight-color: transparent;
 }
 
-@media (max-width: 42.625em) {
+@media (max-width: 600px) {
   .menu {
-    font-size: 0.55em;
+    font-size: 0.7rem;
   }
 }
 
@@ -123,8 +119,8 @@ function setLineWidth(text, button) {
   flex-grow: 1;
   display: flex;
   cursor: pointer;
-  overflow: hidden;
-  padding-top: 0.5em;
+  /* overflow: hidden; */
+  padding-top: 0.5rem;
   position: relative;
   align-items: center;
   color: var(--color-1);
@@ -133,9 +129,11 @@ function setLineWidth(text, button) {
 }
 
 .menu__icon {
-  font-size: 1.05em;
-  stroke: currentColor;
+  font-size: 0.8rem;
+  /* stroke: currentColor; */
   transition: transform var(--duration) var(--cubic);
+  position: absolute;
+  left: 32%;
 }
 
 .menu__item::before {
@@ -153,9 +151,9 @@ function setLineWidth(text, button) {
   transition: transform var(--duration) var(--cubic);
 }
 
-.menu__item::after {
+.menu__text::after {
   left: 0;
-  bottom: 0;
+  bottom: -1rem;
   content: " ";
   height: 0.25em;
   position: absolute;
@@ -168,17 +166,17 @@ function setLineWidth(text, button) {
 }
 
 .menu__text {
-  left: 5.15em;
+  left: 35%;
   font-size: 1.2em;
   position: absolute;
   text-transform: capitalize;
   letter-spacing: 0.01em;
-  transform: translate3d(0, 109%, 0);
+  transform: translate3d(0, 200%, 0);
   transition: transform calc(var(--duration) / 3.7);
 }
 
 .menu__item.active {
-  flex-grow: 2.7;
+  /* flex-grow: 2.7; */
   color: var(--color-2);
 }
 

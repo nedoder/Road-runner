@@ -26,7 +26,7 @@
           <p>
             We provide service for dry vans and temperature-controlled capacity.
           </p>
-          <router-link to="/full-truckload" exact>
+          <router-link to="/full-truckload" exact aria-label="Full truckload">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <g>
                 <path d="M0 0h24v24H0z" fill="none" />
@@ -46,7 +46,7 @@
             Drayage department assists its customers with managing complicated
             drayage solutions.
           </p>
-          <router-link to="/drayage-service" exact>
+          <router-link to="/drayage-service" exact aria-label="Drayage service">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <g>
                 <path d="M0 0h24v24H0z" fill="none" />
@@ -66,7 +66,7 @@
             Hazmat-certified drivers and trucks in our network ready to move
             hazard materials.
           </p>
-          <router-link to="/hazmat-trucking" exact>
+          <router-link to="/hazmat-trucking" exact aria-label="Hazmat trucking">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <g>
                 <path d="M0 0h24v24H0z" fill="none" />
@@ -86,7 +86,7 @@
             Our networks consist of all types of equipment with teams, box
             trucks, cargo vans, etc.
           </p>
-          <router-link to="expedited-shipping" exact>
+          <router-link to="expedited-shipping" exact aria-label="Expedited shipping">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <g>
                 <path d="M0 0h24v24H0z" fill="none" />
@@ -106,7 +106,7 @@
             We have consolidation centers in major metropolitan cities to
             combine the freight.
           </p>
-          <router-link to="ltl-shipping" exact>
+          <router-link to="ltl-shipping" exact aria-label="Ltl shipping">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <g>
                 <path d="M0 0h24v24H0z" fill="none" />

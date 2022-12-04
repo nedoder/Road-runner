@@ -7,7 +7,6 @@ let timer = setInterval(async () => {
   }
   await nextTick();
   counter.value++;
-  console.log(counter);
 }, 3000);
 </script>
 <template>

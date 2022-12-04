@@ -1,4 +1,7 @@
-<script setup></script>
+<script setup>
+const name = "";
+const message = "";
+</script>
 
 <template>
   <main>
@@ -253,6 +256,7 @@
 @media (max-width: 1200px) {
   .carrier-form {
     width: 100%;
+    padding: 2rem 0;
   }
 }
 

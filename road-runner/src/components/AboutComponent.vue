@@ -1,7 +1,7 @@
 <script setup></script>
 <template>
   <div class="about">
-    <img src="../assets/about.webp" />
+    <img src="../assets/about.webp" alt="About image" />
     <div class="about-info">
       <h2>
         <span class="about-title">about company</span>
@@ -12,11 +12,11 @@
       <p>
         <strong>
           Super Ego connects customers with shipping needs with carriers that have the available capacity and service offerings.
-        </strong> 
+        </strong>
         Super Ego Logistics specializes in FTL, LTL, drayage, intermodal,
         hazmat, expedited, temperature controlled, and volume partials. Super Ego Logistics works with customers in all types of industries such as food and beverage, paper, and plastics.
       </p>
-      <router-link to="/about" exact>More about us</router-link>
+      <router-link to="/about" exact aria-label="about-us">More about us</router-link>
     </div>
   </div>
 </template>
