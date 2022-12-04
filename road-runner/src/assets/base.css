@@ -36,6 +36,8 @@ html {
   background-size: 0;
   overflow-x: hidden;
   box-sizing: border-box;
+  background-image: url("../assets/hero.webp");
+  background-size: 0;
 }
 
 body {

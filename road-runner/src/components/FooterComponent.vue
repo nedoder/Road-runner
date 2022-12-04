@@ -8,7 +8,7 @@
             <div class="single-cta">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="m12 20.9 4.95-4.95a7 7 0 1 0-9.9 0L12 20.9zm0 2.828-6.364-6.364a9 9 0 1 1 12.728 0L12 23.728zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 2a4 4 0 1 1 0-8 4 4 0 0 1 0 8z" fill="#ff5e14" class="fill-000000"></path></svg>
               <div class="cta-text">
-                <h4>Find us</h4>
+                <h3>Find us</h3>
                 <span>1010 Avenue, sw 54321, chandigarh</span>
               </div>
             </div>
@@ -17,7 +17,7 @@
             <div class="single-cta">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M9.366 10.682a10.556 10.556 0 0 0 3.952 3.952l.884-1.238a1 1 0 0 1 1.294-.296 11.422 11.422 0 0 0 4.583 1.364 1 1 0 0 1 .921.997v4.462a1 1 0 0 1-.898.995A15.51 15.51 0 0 1 18.5 21C9.94 21 3 14.06 3 5.5c0-.538.027-1.072.082-1.602A1 1 0 0 1 4.077 3h4.462a1 1 0 0 1 .997.921A11.422 11.422 0 0 0 10.9 8.504a1 1 0 0 1-.296 1.294l-1.238.884zm-2.522-.657 1.9-1.357A13.41 13.41 0 0 1 7.647 5H5.01c-.006.166-.009.333-.009.5C5 12.956 11.044 19 18.5 19c.167 0 .334-.003.5-.01v-2.637a13.41 13.41 0 0 1-3.668-1.097l-1.357 1.9a12.442 12.442 0 0 1-1.588-.75l-.058-.033a12.556 12.556 0 0 1-4.702-4.702l-.033-.058a12.442 12.442 0 0 1-.75-1.588z" fill="#ff5e14" class="fill-000000"></path></svg>
               <div class="cta-text">
-                <h4>Call us</h4>
+                <h3>Call us</h3>
                 <span>9876543210 0</span>
               </div>
             </div>
@@ -26,7 +26,7 @@
             <div class="single-cta">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M2.243 6.854 11.49 1.31a1 1 0 0 1 1.029 0l9.238 5.545a.5.5 0 0 1 .243.429V20a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.283a.5.5 0 0 1 .243-.429zM4 8.133V19h16V8.132l-7.996-4.8L4 8.132zm8.06 5.565 5.296-4.463 1.288 1.53-6.57 5.537-6.71-5.53 1.272-1.544 5.424 4.47z" fill="#ff5e14" class="fill-000000"></path></svg>
               <div class="cta-text">
-                <h4>Mail us</h4>
+                <h3>Mail us</h3>
                 <span>mail@info.com</span>
               </div>
             </div>
@@ -44,10 +44,9 @@
               </div>
               <div class="footer-text">
                 <p>
-                  Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed
-                  do eiusmod tempor incididuntut consec tetur adipisicing
-                  elit,Lorem ipsum dolor sit amet.
+                  <span class="highlight">USDOT </span><span> 2894182</span>
                 </p>
+                <p><span class="highlight">MC </span><span> 972544 </span></p>
               </div>
               <div class="footer-social-icon">
                 <span>Follow us</span>
@@ -94,9 +93,9 @@
               </div>
               <div class="subscribe-form">
                 <p>Apply for the driver</p>
-                <button>
+                <router-link to="/carrier" exact aria-label="Carrier">
                   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z" fill="#ffffff" class="fill-000000"></path></svg>
-                </button>
+                </router-link>
               </div>
             </div>
           </div>
@@ -177,14 +176,14 @@ ul {
   padding-left: 1rem;
   display: inline-block;
 }
-.cta-text h4 {
-  color: #fff;
+.cta-text h3 {
+  color: var(--white);
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 2px;
 }
 .cta-text span {
-  color: #757575;
+  color: var(--color-1);
   font-size: 15px;
 }
 .footer-content {
@@ -209,12 +208,12 @@ ul {
 }
 .footer-text p {
   margin-bottom: 14px;
-  font-size: 14px;
-  color: #7e7e7e;
+  font-size: 1rem;
+  color: var(--color-1);
   line-height: 28px;
 }
 .footer-social-icon span {
-  color: #fff;
+  color: var(--white);
   display: block;
   font-size: 20px;
   font-weight: 700;
@@ -222,7 +221,7 @@ ul {
   margin-bottom: 20px;
 }
 .footer-social-icon a {
-  color: #fff;
+  color: var(--white);
   font-size: 16px;
   margin-right: 15px;
 }
@@ -244,7 +243,7 @@ ul {
   background: #dd4b39;
 }
 .footer-widget-heading h3 {
-  color: #fff;
+  color: var(--white);
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 40px;
@@ -257,7 +256,7 @@ ul {
   bottom: -15px;
   height: 2px;
   width: 50px;
-  background: #ff5e14;
+  background: var(--color-2);
 }
 .footer-widget ul li {
   /* display: inline-block; */
@@ -266,10 +265,10 @@ ul {
   margin-bottom: 12px;
 }
 .footer-widget ul li a:hover {
-  color: #ff5e14;
+  color: var(--color-2);
 }
 .footer-widget ul li a {
-  color: #878787;
+  color: var(--color-1);
   text-transform: capitalize;
 }
 .subscribe-form {
@@ -281,14 +280,15 @@ ul {
   padding: 14px 28px;
   background: #2e2e2e;
   border: 1px solid #2e2e2e;
-  color: #878787;
+  color: var(--color-1);
 }
-.subscribe-form button {
+.subscribe-form a {
+  cursor: pointer;
   position: absolute;
   right: 0;
-  background: #ff5e14;
+  background: var(--color-2);
   padding: 13px 20px;
-  border: 1px solid #ff5e14;
+  border: 1px solid var(--color-2);
   top: 0;
 }
 .subscribe-form svg {
@@ -307,10 +307,10 @@ ul {
 .copyright-text p {
   margin: 0;
   font-size: 14px;
-  color: #878787;
+  color: var(--color-1);
 }
 .copyright-text p a {
-  color: #ff5e14;
+  color: var(--color-2);
 }
 .footer-menu li {
   display: inline-block;
@@ -318,11 +318,11 @@ ul {
   text-align: right;
 }
 .footer-menu li:hover a {
-  color: #ff5e14;
+  color: var(--color-2);
 }
 .footer-menu li a {
   font-size: 14px;
-  color: #878787;
+  color: var(--color-1);
 }
 
 .container {
@@ -346,6 +346,12 @@ ul {
 
   .right-column {
     display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-section {
+    margin-bottom: 3rem;
   }
 }
 

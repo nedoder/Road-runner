@@ -12,10 +12,10 @@
           <img src="../assets/services.webp" alt="Drayage" />
           <h2>
             Whether your import or export shipment needs to move to or from a port
-            or warehouse, we will find the right solution.
+            or <span class="highlight">warehouse</span>, we will find the right solution.
           </h2>
           <p>
-            Super Ego Logistics Drayage department assists its customers with
+            Road runner assists its customers with
             managing complicated drayage solutions. Our teams provide arrivals,
             quoting, transloading, scheduling, and track and trace by managing from
             port to warehouse.

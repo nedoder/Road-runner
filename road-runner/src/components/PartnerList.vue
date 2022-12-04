@@ -2,8 +2,8 @@
 <template>
   <div class="partner-list">
     <div class="partner-main">
-      <span class="join">JOIN THE LIST</span>
-      <h2>Partners that <span class="highlight">trust</span> us</h2>
+      <span class="join">LET'S WORK TOGETHER</span>
+      <h2>Our <span class="highlight">trusted</span> partners</h2>
       <div class="partners">
         <img src="../assets/logo.svg"  alt="Partners logo" />
         <img src="../assets/logo.svg"  alt="Partners logo" />

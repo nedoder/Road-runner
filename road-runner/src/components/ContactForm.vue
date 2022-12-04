@@ -8,13 +8,12 @@ const message = "";
       <div class="contact">
         <div class="contact-info">
           <h2>
-            <span class="contact-title">CONNECT WITH YOUR AGENT</span>
-            <span class="highlight">Shipping </span>questions?
+            <span class="contact-title">CONNECT WITH US</span>
+            You have<span class="highlight"> questions?</span>
           </h2>
           <p>
-            Tell us more about your freight. Select the mode you would like to
-            receive a quote on.
-            <strong>Or reach by phone: (312) 796-6668</strong>
+            Tell us more about it. You can fill the form and send us a message.
+            <strong>Or reach by phone: (312) 111-1111</strong>
           </p>
         </div>
         <div class="contact-form">
@@ -59,7 +58,7 @@ const message = "";
             name="message"
             v-model="message"
             rows="8"
-            placeholder="How can we help you?"
+            placeholder="Write a message"
             class="contact-message"
           ></textarea>
           <button class="contact-button" @click="onSubmit">Send message</button>

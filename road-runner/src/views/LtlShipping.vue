@@ -10,12 +10,12 @@
       <div class="service-sections">
         <div class="service-section">
           <img src="../assets/ltl-img.webp" alt="Ltl shipping" />
-          <h2>Dry Van, Reefer, Flatbed</h2>
+          <h2>Dry Van, <span class="highlight">Reefer</span>, Flatbed</h2>
           <p>
             Less than truckload freight shipping (LTL) is used for the
             transportation of small freight or when freight doesn't require the use
             of an entire trailer. This shipping method can be used when freight
-            weighs between 150 and 15,000 pounds. Super Ego Logistics has
+            weighs between 150 and 15,000 pounds. Road runner has
             consolidation centers in major metropolitan cities to combine the
             freight, save on cost and be able to get nationwide converge.
           </p>

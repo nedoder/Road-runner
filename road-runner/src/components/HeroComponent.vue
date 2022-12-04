@@ -1,31 +1,45 @@
 <script setup>
-import { ref, nextTick } from "vue";
-let counter = ref(0);
-let timer = setInterval(async () => {
-  if (counter.value >= 1) {
-    clearInterval(timer);
-  }
-  await nextTick();
-  counter.value++;
-}, 3000);
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from "swiper/vue";
+import SwiperCore, { Autoplay } from "swiper";
+// Import Swiper styles
+import "swiper/css";
+// import required modules
+SwiperCore.use([Autoplay]);
 </script>
 <template>
   <main>
     <div class="hero-overlay">
+      <img src="../assets/logo.svg" alt="Logo" class="logo" />
       <div class="hero-text">
         <h1>
           <transition name="show" appear>
             <span>We are</span>
           </transition>
-          <transition name="fade">
-            <span v-if="counter === 0">your future partner</span>
-          </transition>
-          <transition name="fade1">
-            <span v-if="counter === 1">leading the way</span>
-          </transition>
-          <transition name="fade2">
-            <span v-if="counter === 2">breaking limits</span>
-          </transition>
+          <swiper
+            :direction="'vertical'"
+            :effect="'fade'"
+            :centeredSlides="true"
+            :autoplay="{
+              delay: 2500,
+              disableOnInteraction: false,
+              stopOnLastSlide: true,
+            }"
+            class="swiper"
+          >
+            <swiper-slide>
+              <span>your future partner</span>
+            </swiper-slide>
+            <swiper-slide>
+              <span>leading the way</span>
+            </swiper-slide>
+            <swiper-slide>
+              <span>breaking limits</span>
+            </swiper-slide>
+            <swiper-slide>
+              <span>road runners</span>
+            </swiper-slide>
+          </swiper>
         </h1>
       </div>
     </div>
@@ -42,6 +56,14 @@ main {
   background-position: center center;
 }
 
+.logo {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  left: 10%;
+  top: 5%;
+}
+
 h1 span {
   font-size: 20rem;
   color: var(--color-2);
@@ -51,6 +73,17 @@ h1 span {
   text-align: center;
   width: 100%;
   display: block;
+}
+
+.swiper {
+  height: 15vh;
+  width: 100%;
+  position: absolute;
+  bottom: -8rem;
+}
+
+.swiper-slide {
+  overflow: hidden;
 }
 span:last-child {
   position: absolute;
@@ -142,6 +175,10 @@ span:nth-child(2) {
   span:last-child {
     font-size: 4rem;
   }
+
+  .swiper {
+    bottom: -6rem;
+  }
 }
 @media (max-width: 768px) {
   .hero-text {
@@ -152,6 +189,10 @@ span:nth-child(2) {
   }
   span:last-child {
     font-size: 3.5rem;
+  }
+
+  .swiper {
+    bottom: -4rem;
   }
 }
 @media (max-width: 768px) {
@@ -169,6 +210,10 @@ span:nth-child(2) {
   span:last-child {
     font-size: 2.5rem;
   }
+
+  .swiper {
+    bottom: -3rem;
+  }
 }
 @media (max-width: 400px) {
   h1 span {
@@ -177,6 +222,10 @@ span:nth-child(2) {
   span:last-child {
     font-size: 2rem;
   }
+
+  .swiper {
+    bottom: -2.5rem;
+  }
 }
 @media (max-width: 350px) {
   h1 span {
@@ -184,6 +233,10 @@ span:nth-child(2) {
   }
   span:last-child {
     font-size: 1rem;
+  }
+
+  .swiper {
+    bottom: -1.5rem;
   }
 }
 </style>

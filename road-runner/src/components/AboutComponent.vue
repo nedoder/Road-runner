@@ -11,10 +11,10 @@
       </h2>
       <p>
         <strong>
-          Super Ego connects customers with shipping needs with carriers that have the available capacity and service offerings.
+          Road runner connects customers with shipping needs with carriers that have the available capacity and service offerings.
         </strong>
-        Super Ego Logistics specializes in FTL, LTL, drayage, intermodal,
-        hazmat, expedited, temperature controlled, and volume partials. Super Ego Logistics works with customers in all types of industries such as food and beverage, paper, and plastics.
+        Road runner specializes in FTL, LTL, drayage, intermodal,
+        hazmat, expedited, temperature controlled, and volume partials. Road runner works with customers in all types of industries such as food and beverage, paper, and plastics.
       </p>
       <router-link to="/about" exact aria-label="about-us">More about us</router-link>
     </div>

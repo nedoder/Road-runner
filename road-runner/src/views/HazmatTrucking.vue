@@ -10,7 +10,7 @@
       <div class="service-sections">
         <div class="service-section">
           <img src="../assets/hazmat-img.webp" alt="Hazmat" />
-          <h2>Expert hazmat trucking transport</h2>
+          <h2>Expert <span class="highlight">hazmat</span> trucking transport</h2>
           <p>
             Hazmat trucking is the transport of hazardous materials, which could be
             anything from hazardous gasses or poisons to waste or radioactive
@@ -20,7 +20,7 @@
             Drivers hauling a hazmat load have the added stress of ensuring they are
             following the additional regulations for this type of cargo. Plus, they
             may need to avoid certain routes to detour around hazmat-restricted
-            areas. Super Ego Logistics has hazmat-certified drivers and trucks in
+            areas. Road runner has hazmat-certified drivers and trucks in
             our network ready to move your hazardous materials to their destination
             and fleet managers trained in the most optimized routing that can make
             it easier for drivers.

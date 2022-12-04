@@ -1,25 +1,8 @@
 <script setup>
-import { ref } from "vue";
-const button = ref();
-const text = ref();
-const links = document.getElementsByClassName("menu__text");
-
-function clickBtn(e) {
-  Array.from(links).forEach((link) => {
-    if (link.classList.contains("active")) {
-      link.classList.remove("active");
-    }
-  });
-  e.currentTarget.lastChild.classList.add("active");
-}
-
-// onMounted(() => {
-//   clickBtn()
-// })
 </script>
 <template>
   <menu class="menu">
-    <router-link class="menu__item" to="/" exact @click="clickBtn" ref="button" aria-label="Home">
+    <router-link class="menu__item" to="/" exact aria-label="Home">
       <div class="menu__icon" >
         <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <g id="home-anm">
@@ -28,9 +11,9 @@ function clickBtn(e) {
           </g>
         </svg>
       </div>
-      <strong class="menu__text" ref="text">home</strong>
+      <strong class="menu__text" :class="{ 'active': $route.path == '/' }">home</strong>
     </router-link>
-    <router-link class="menu__item" to="/about" exact @click="clickBtn" ref="button" aria-label="About">
+    <router-link class="menu__item" to="/about" exact aria-label="About">
       <div class="menu__icon" >
         <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <g id="strategy-anm">
@@ -39,9 +22,9 @@ function clickBtn(e) {
           </g>
         </svg>
       </div>
-      <strong class="menu__text"  ref="text">about</strong>
+      <strong class="menu__text" :class="{ 'active': $route.path == '/about' }">about</strong>
     </router-link>
-    <router-link to="/services" class="menu__item" exact @click="clickBtn" ref="button" aria-label="Services">
+    <router-link to="/services" class="menu__item" exact aria-label="Services">
       <div class="menu__icon" >
         <svg class="icon"  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <g id="period-anm">
@@ -50,9 +33,9 @@ function clickBtn(e) {
         </g>
       </svg>
       </div>
-      <strong class="menu__text"  ref="text">services</strong>
+      <strong class="menu__text" :class="{ 'active': $route.path == '/services' }">services</strong>
     </router-link>
-    <router-link to="/carrier" class="menu__item" exact @click="clickBtn" ref="button" aria-label="Carrier">
+    <router-link to="/carrier" class="menu__item" exact aria-label="Carrier">
       <div class="menu__icon" >
         <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <g id="security-cir">
@@ -62,9 +45,9 @@ function clickBtn(e) {
         </svg>
       
       </div>
-      <strong class="menu__text"  ref="text">carriers</strong>
+      <strong class="menu__text"  :class="{ 'active': $route.path == '/carrier' }">carriers</strong>
     </router-link>
-    <router-link to="/contact" class="menu__item" exact @click="clickBtn" ref="button" aria-label="Contact">
+    <router-link to="/contact" class="menu__item" exact aria-label="Contact">
       <div class="menu__icon" >
         <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <g id="settings-anm" >
@@ -73,7 +56,7 @@ function clickBtn(e) {
           </g>
         </svg>
       </div>
-      <strong class="menu__text"  ref="text">contact</strong>
+      <strong class="menu__text"  :class="{ 'active': $route.path == '/contact' }">contact</strong>
     </router-link>
   </menu>
 </template>
@@ -153,17 +136,18 @@ function clickBtn(e) {
 
 .menu__text::after {
   left: 0;
-  bottom: -1rem;
+  bottom: 0;
   content: " ";
   height: 0.25em;
   position: absolute;
   border-radius: 2em;
   transform-origin: left center;
   background-color: currentColor;
-  width: 6rem;
-  transform: translate3d(3em, 0, 0) scaleX(0);
+  width: -webkit-fill-available;
+  transform: scaleX(0);
   transition: transform calc(var(--duration) + 0.2s) var(--cubic);
 }
+
 
 .menu__text {
   left: 35%;
@@ -171,7 +155,7 @@ function clickBtn(e) {
   position: absolute;
   text-transform: capitalize;
   letter-spacing: 0.01em;
-  transform: translate3d(0, 200%, 0);
+  transform: translate3d(0, 250%, 0);
   transition: transform calc(var(--duration) / 3.7);
 }
 
@@ -196,6 +180,11 @@ function clickBtn(e) {
 .menu__text.active {
   transform: translate3d(0, 0, 0);
   transition: transform calc(var(--duration) / 1.5);
+}
+
+.menu__text.active::after {
+  transform: scaleX(1) !important;
+  transition: transform calc(var(--duration) + 0.2s) var(--cubic);
 }
 
 .icon {
@@ -373,6 +362,24 @@ function clickBtn(e) {
 
   50% {
     transform: rotate(60deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .icon {
+    width: 2em;
+    height: 2em;
+  }
+}
+
+@media (max-width: 350px) {
+  .icon {
+    width: 1.8em;
+    height: 1.8em;
+  }
+
+  .menu__text {
+    font-size: 1.1em;
   }
 }
 </style>

@@ -10,12 +10,12 @@
       <div class="service-sections">
         <div class="service-section">
           <img src="../assets/expedited-img.webp" alt="Expedited shipping"/>
-          <h2>Faster than standard</h2>
+          <h2>Faster than <span class="highlight">standard</span></h2>
           <p>
             Expedited shipping service is a type of shipping that involves using
             faster methods to transport goods. This can include using a faster mode
             of transportation, such as shipping the goods directly to the customer
-            instead of going through a retailer first. Super Ego Logistics has
+            instead of going through a retailer first. Road runner has
             developed a network for drivers to pick up and deliver expedited
             shipments as quickly as possible. Our networks consist of all types of
             equipment with teams, box trucks, cargo vans, etc.

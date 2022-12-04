@@ -13,24 +13,24 @@ import PartnerList from '../components/PartnerList.vue';
       <img src="../assets/about-care.webp" alt="About" />
       <div class="about-info">
         <h2>
-          <span class="about-span">We care more</span>
+          <span class="about-span">Our story</span>
           Unique freight brokerage <span class="highlight">service</span>
         </h2>
         <p>
           Our company began in 2019. with one vision in mind- to provide the
-          best service to our customers. From coast to coast, Super Ego connects
+          best service to our customers. From coast to coast, Road runner connects
           businesses with carriers who transport goods effectively and
-          efficiently. Super Ego Logistics is a unique freight brokerage that
+          efficiently. Road runner is a unique freight brokerage that
           focuses on over-the-road transport. 
           <strong>
             Through a go-to-market strategy
-          model, Super Ego is changing the environment of how traditional
+          model, Road runner is changing the environment of how traditional
           freight brokerages work by delivering operational excellence and 24/7
           service to scale.
           </strong>
           We specializes in FTL, LTL, drayage, intermodal,
-          hazmat, expedited, temperature controlled, and volume partials. Super
-          Ego Logistics works with customers in all types of industries such as
+          hazmat, expedited, temperature controlled, and volume partials. Road runner
+           works with customers in all types of industries such as
           food and beverage, paper, and plastics.
         </p>
       </div>
@@ -39,7 +39,7 @@ import PartnerList from '../components/PartnerList.vue';
       <div class="mission-info">
         <h2>
           <span class="about-span">OUR MISSION</span>
-          Our <span class="highlight">promises</span> to you
+          We <span class="highlight">provide</span> more
         </h2>
         <p>
           We will provide transportation solutions that align with your supply
@@ -109,6 +109,7 @@ import PartnerList from '../components/PartnerList.vue';
 .about-info h2,
 .about-mission h2 {
   font-size: 3rem;
+  padding-bottom: 1rem;
 }
 
 .about-span {

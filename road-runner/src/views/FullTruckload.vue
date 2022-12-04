@@ -10,21 +10,21 @@
       <div class="service-sections">
         <div class="service-section">
           <img src="../assets/fulltruck.webp" alt="Full truckload"/>
-          <h2>Dry Van, Reefer, Flatbed</h2>
+          <h2><span class="highlight">Dry Van</span>, Reefer, Flatbed</h2>
           <p>
             Full truckload service, commonly referred to as FTL, is a type of
             shipping mode whereby a truck carries one dedicated shipment. In other
             words, the journey is reserved for one shipment only. FTL trucking has
             several advantages over the alternative trucking shipment mode, LTL, or
-            less than a full truckload shipment. Super Ego Logistics provides
+            less than a full truckload shipment. Road runner provides
             transportation solutions that align with your supply chain goals and
             needs, whether it is a spot shipment, next day, project-based or
             contracted freight. Our specialists can provide service for dry vans and
             temperature-controlled capacity by understanding your business needs.
-            Super Ego Logistics uses every resource such as network and technology
+            Road runner uses every resource such as network and technology
             to be sure all freight is delivered on time. We understand how open deck
-            equipment can be difficult for many shipping companies. Super Ego
-            Logistics understands your needs and provides customized solutions to
+            equipment can be difficult for many shipping companies. Road runner
+            understands your needs and provides customized solutions to
             provide consistent capacity. Whether you need to replace or add to your
             existing fleet, we can deliver cost savings, convenience and on-time
             deliveries while enabling your company to make better use of its capital
