@@ -1,15 +1,32 @@
 <script setup>
+import { ref, onMounted } from "vue";
+const target = ref();
+const animate = ref(false);
+const observer = new IntersectionObserver(
+  ([entry]) => {
+    animate.value = entry.isIntersecting;
+  },
+  {
+    threshold: 0.5,
+  }
+);
+onMounted(() => {
+  observer.observe(target.value);
+});
 const name = "";
 const message = "";
 </script>
 <template>
-  <div class="contact-overlay">
+  <div class="contact-overlay" ref="target">
     <div class="contact-wrapper">
       <div class="contact">
         <div class="contact-info">
           <h2>
             <span class="contact-title">CONNECT WITH US</span>
-            You have<span class="highlight"> questions?</span>
+            You have
+            <transition name="fade" mode="out-in">
+              <span class="highlight" v-if="animate">questions? </span>
+            </transition>
           </h2>
           <p>
             Tell us more about it. You can fill the form and send us a message.
@@ -61,7 +78,7 @@ const message = "";
             placeholder="Write a message"
             class="contact-message"
           ></textarea>
-          <button class="contact-button" @click="onSubmit">Send message</button>
+          <button class="contact-button" @click="onSubmit"><span>Send message</span></button>
         </div>
       </div>
     </div>
@@ -79,8 +96,8 @@ const message = "";
 }
 
 .contact-wrapper {
-  /* position: absolute; */
-  /* top: 0;
+  /* position: absolute;
+  top: 0;
   left: 0; */
   /* bottom: 0; */
   width: 100%;
@@ -148,14 +165,36 @@ const message = "";
   width: 100%;
   border-radius: 0.5rem;
   outline: none;
-  border: 1px solid var(--color-2);
+  border: 1px solid var(--color-5);
   padding: 1rem 0;
-  color: var(--color-2);
+  color: var(--color-5);
   font-weight: 600;
-  transition: all 0.5s ease;
+  overflow: hidden;
+  transition: color 0.3s 0.1s ease-out;
+}
+
+.contact-form button::before {
+  content: "";
+  border-radius: 0.5;
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: -100%;
+  top: 0;
+  text-align: center;
+  transition: all 0.5s ease-out;
 }
 .contact-form button:hover {
   cursor: pointer;
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.contact-form button:hover::before {
+  width: 100%;
+  left: 0;
+  box-shadow: inset 0 0 10rem var(--color-2);
 }
 
 @media (max-width: 1200px) {

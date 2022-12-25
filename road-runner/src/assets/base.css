@@ -4,6 +4,10 @@
   --cubic: cubic-bezier(0.4, 0, 0.2, 1);
   --color-1: #d5dadd;
   --color-2: #ff5e14;
+  /* --color-2: #c03320; */
+  --color-3: #6D768D;
+  --color-4: #D64000;
+  --color-5: #ad3100;
   --white: #fefefe;
   --duration-icon: 1s;
 }
@@ -35,6 +39,7 @@ html {
   position: relative;
   background-size: 0;
   overflow-x: hidden;
+  overflow-y: scroll;
   box-sizing: border-box;
   background-image: url("../assets/hero.webp");
   background-size: 0;
@@ -186,7 +191,7 @@ button {
 
 .service-link a,
 .service-contact a {
-  color: var(--color-2);
+  color: var(--color-4);
   font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
@@ -196,6 +201,29 @@ button {
   font-size: 2rem;
 }
 
+.image-overlay {
+  height: 70vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  width: inherit;
+  transition: opacity 0.8s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* svg,
+svg path:last-child {
+  fill: var(--color-2) !important;
+} */
 @media (max-width: 992px) {
 
   .service-flex {

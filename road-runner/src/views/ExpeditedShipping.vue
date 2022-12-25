@@ -1,16 +1,55 @@
-<script setup></script>
+<script setup>
+import FooterComponent from "../components/FooterComponent.vue";
+import { ref, onMounted } from "vue";
+const target = ref();
+const animate = ref(false);
+const observer = new IntersectionObserver(
+  ([entry]) => {
+    animate.value = entry.isIntersecting;
+  },
+  {
+    threshold: 0.5,
+  }
+);
+
+const target2 = ref();
+const animate2 = ref(false);
+const observer2 = new IntersectionObserver(
+  ([entry]) => {
+    animate2.value = entry.isIntersecting;
+  },
+  {
+    threshold: 0.5,
+  }
+);
+onMounted(() => {
+  observer.observe(target.value);
+  observer2.observe(target2.value);
+});
+</script>
 <template>
   <main>
-    <div class="service-page">
+    <div class="service-page" ref="target">
+      <div class="image-overlay"></div>
       <div class="service-page-title">
-        <h1>Expedited <span class="highlight">shipping</span></h1>
+        <h1>
+          Expedited
+          <transition name="fade" mode="out-in">
+            <span class="highlight" v-if="animate">shipping </span>
+          </transition>
+        </h1>
       </div>
     </div>
     <div class="service-flex">
-      <div class="service-sections">
+      <div class="service-sections" ref="target2">
         <div class="service-section">
-          <img src="../assets/expedited-img.webp" alt="Expedited shipping"/>
-          <h2>Faster than <span class="highlight">standard</span></h2>
+          <img src="../assets/expedited-img.webp" alt="Expedited shipping" width="100%" />
+          <h2>
+            Faster than 
+            <transition name="fade" mode="out-in">
+              <span class="highlight" v-if="animate2">standard </span>
+            </transition>
+          </h2>
           <p>
             Expedited shipping service is a type of shipping that involves using
             faster methods to transport goods. This can include using a faster mode
@@ -48,6 +87,7 @@
         </div>
       </div>
     </div>
+    <FooterComponent />
   </main>
 </template>
 <style scoped>

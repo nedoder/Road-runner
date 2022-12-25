@@ -1,16 +1,37 @@
-<script setup></script>
+<script setup>
+import { ref, onMounted } from "vue";
+const target = ref();
+const animate = ref(false);
+const observer = new IntersectionObserver(
+  ([entry]) => {
+    animate.value = entry.isIntersecting;
+  },
+  {
+    threshold: 0.5,
+  }
+);
+onMounted(() => {
+  observer.observe(target.value);
+});
+</script>
 <template>
-  <div class="partner-list">
+  <div class="partner-list" ref="target">
     <div class="partner-main">
       <span class="join">LET'S WORK TOGETHER</span>
-      <h2>Our <span class="highlight">trusted</span> partners</h2>
+      <h2>
+        Our
+        <transition name="fade" mode="out-in">
+          <span class="highlight" v-if="animate">trusted </span>
+        </transition>
+        partners
+      </h2>
       <div class="partners">
-        <img src="../assets/logo.svg"  alt="Partners logo" />
-        <img src="../assets/logo.svg"  alt="Partners logo" />
-        <img src="../assets/logo.svg"  alt="Partners logo" />
-        <img src="../assets/logo.svg"  alt="Partners logo" />
-        <img src="../assets/logo.svg"  alt="Partners logo" />
-        <img src="../assets/logo.svg"  alt="Partners logo" />
+        <img src="../assets/logo.svg"  alt="Partners logo" width="56" height="56" />
+        <img src="../assets/logo.svg"  alt="Partners logo" width="56" height="56" />
+        <img src="../assets/logo.svg"  alt="Partners logo" width="56" height="56" />
+        <img src="../assets/logo.svg"  alt="Partners logo" width="56" height="56" />
+        <img src="../assets/logo.svg"  alt="Partners logo" width="56" height="56" />
+        <img src="../assets/logo.svg"  alt="Partners logo" width="56" height="56" />
       </div>
     </div>
   </div>
@@ -31,7 +52,7 @@
 .join {
   font-size: 1.5rem;
   text-transform: uppercase;
-  color: var(--color-1);
+  color: var(--color-3);
   font-weight: 600;
 }
 

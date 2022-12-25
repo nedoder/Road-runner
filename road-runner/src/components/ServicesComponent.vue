@@ -1,11 +1,28 @@
-<script setup></script>
+<script setup>
+import { ref, onMounted } from "vue";
+const target = ref();
+const animate = ref(false);
+const observer = new IntersectionObserver(
+  ([entry]) => {
+    animate.value = entry.isIntersecting;
+  },
+  {
+    threshold: 0.5,
+  }
+);
+onMounted(() => {
+  observer.observe(target.value);
+});
+</script>
 <template>
   <div class="services-section">
-    <div class="service-info">
+    <div class="service-info" ref="target">
       <h2>
         <span class="service-title">services</span>
-        <span class="highlight">Freight </span>expertise, technology, and
-        experience
+        <transition name="fade" mode="out-in">
+          <span class="highlight" v-if="animate">Freight </span>
+        </transition>
+        expertise, technology, and experience
       </h2>
       <p>
         <strong>
@@ -21,7 +38,7 @@
     <div class="services-items">
       <div class="service-item">
         <span>01</span>
-        <p>Full Truck Load</p>
+        <p class="truckload">Full Truckload</p>
         <div class="service-content">
           <p>
             We provide service for dry vans and temperature-controlled capacity.
@@ -148,7 +165,7 @@
   top: -3rem;
   font-size: 1.5rem;
   text-transform: uppercase;
-  color: var(--color-1);
+  color: var(--color-3);
   font-weight: 600;
 }
 
@@ -168,8 +185,14 @@
 }
 
 .service-item {
-  width: 20%;
+  width: calc(20% - 1rem);
+  align-self: stretch;
+  /* align-self: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch; */
 }
+
 .service-item p {
   z-index: 2;
   font-weight: 600;
@@ -188,10 +211,42 @@
 .service-content p {
   font-weight: 400;
   font-size: 1rem;
+  white-space: normal;
+  height: 100px;
+  overflow: hidden;
+  /* display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden; */
 }
 
+.truckload {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 .service-content svg {
   width: 3rem;
+  border-radius: 50%;
+}
+.service-content a::before {
+  content: "";
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  top: -30px;
+  right: 1.1rem;
+  background: var(--color-2);
+  opacity: 0.1;
+  transform-origin: center;
+}
+.service-content a:hover > svg {
+  /* fill: #fff;
+  background: #000; */
+  transform: translate3d(100%, 0, 0);
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 1200px) {

@@ -1,20 +1,68 @@
 <script setup>
-import PartnerList from '../components/PartnerList.vue';
+import PartnerList from "../components/PartnerList.vue";
+import FooterComponent from "../components/FooterComponent.vue";
+import { ref, onMounted } from "vue";
+const target = ref();
+const animate = ref(false);
+const observer = new IntersectionObserver(
+  ([entry]) => {
+    animate.value = entry.isIntersecting;
+  },
+  {
+    threshold: 0.5,
+  }
+);
+
+const target2 = ref();
+const animate2 = ref(false);
+const observer2 = new IntersectionObserver(
+  ([entry]) => {
+    animate2.value = entry.isIntersecting;
+  },
+  {
+    threshold: 0.5,
+  }
+);
+
+const target3 = ref();
+const animate3 = ref(false);
+const observer3 = new IntersectionObserver(
+  ([entry]) => {
+    animate3.value = entry.isIntersecting;
+  },
+  {
+    threshold: 0.5,
+  }
+);
+onMounted(() => {
+  observer.observe(target.value);
+  observer2.observe(target2.value);
+  observer3.observe(target3.value);
+});
 </script>
 
 <template>
   <main>
-    <div class="about-wrapper">
+    <div class="about-wrapper" ref="target">
+      <div class="image-overlay"></div>
       <div class="aboutview-title">
-        <h1>About <span class="highlight">Road runner</span></h1>
+        <h1>
+          About
+          <transition name="fade" mode="out-in">
+            <span class="highlight" v-if="animate">Road runner </span>
+          </transition>
+        </h1>
       </div>
     </div>
     <div class="about-intro">
-      <img src="../assets/about-care.webp" alt="About" />
-      <div class="about-info">
+      <img src="../assets/about-care.webp" alt="About" max-width="50%"/>
+      <div class="about-info" ref="target2">
         <h2>
           <span class="about-span">Our story</span>
-          Unique freight brokerage <span class="highlight">service</span>
+          Unique freight brokerage
+          <transition name="fade" mode="out-in">
+            <span class="highlight" v-if="animate2">service</span>
+          </transition>
         </h2>
         <p>
           Our company began in 2019. with one vision in mind- to provide the
@@ -36,10 +84,14 @@ import PartnerList from '../components/PartnerList.vue';
       </div>
     </div>
     <div class="about-mission">
-      <div class="mission-info">
+      <div class="mission-info" ref="target3">
         <h2>
           <span class="about-span">OUR MISSION</span>
-          We <span class="highlight">provide</span> more
+          We
+          <transition name="fade" mode="out-in">
+            <span class="highlight" v-if="animate3">provide</span>
+          </transition>
+          more
         </h2>
         <p>
           We will provide transportation solutions that align with your supply
@@ -55,15 +107,19 @@ import PartnerList from '../components/PartnerList.vue';
           <li>97% On-Time Pickup and Delivery</li>
           <li>Dedicated Operations Support</li>
         </ul>
-        <router-link to="/carrier" class="join-link" exact aria-label="Join us">
-          Join us today!
+        <router-link to="/carrier" exact aria-label="join-us" class="learn-more">
+          <span class="circle" aria-hidden="true">
+            <span class="icons arrow"></span>
+          </span>
+          <span class="button-text">Join us!</span>
         </router-link>
       </div>
-      <img src="../assets/about-mission.webp" alt="Our mission"/>
+      <img src="../assets/about-mission.webp" alt="Our mission" max-width="50%"/>
     </div>
     <div class="partner-list">
       <PartnerList />
     </div>
+    <FooterComponent />
   </main>
 </template>
 
@@ -117,7 +173,7 @@ import PartnerList from '../components/PartnerList.vue';
   top: -3rem;
   font-size: 1.5rem;
   text-transform: uppercase;
-  color: var(--color-1);
+  color: var(--color-3);
   font-weight: 600;
 }
 
@@ -157,14 +213,81 @@ import PartnerList from '../components/PartnerList.vue';
   margin-right: 1rem;
 }
 
-.join-link {
-  padding: 1rem;
-  border: 1px solid var(--color-2);
-  color: var(--color-2);
-}
-
-.join-link:hover {
+.mission-info a {
+  position: relative;
+  display: inline-block;
   cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+.mission-info a.learn-more {
+  width: 12rem;
+  height: auto;
+}
+.circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: var(--color-2);
+}
+.icons {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: var(--white);
+}
+.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: transparent;
+}
+.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.25rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid var(--white);
+  border-right: 0.125rem solid var(--white);
+  transform: rotate(45deg);
+}
+.button-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #000;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+.mission-info a:hover > .circle {
+  width: 100%;
+}
+.mission-info a:hover > .circle > .arrow {
+  background: var(--white);
+  transform: translate(1rem, 0);
+}
+.mission-info a:hover > .button-text {
+  color: var(--white);
 }
 
 @media (max-width: 992px) {

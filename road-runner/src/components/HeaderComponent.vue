@@ -79,6 +79,7 @@
   background-color: var(--white);
   border-radius: 1em 1em 0 0;
   -webkit-tap-highlight-color: transparent;
+  box-shadow:  0 -2px 2px -1px rgba(0, 0, 0, 0.1), 0 2px 2px -1px rgba(0, 0, 0, 0.06);
 }
 
 @media (max-width: 600px) {
@@ -119,9 +120,9 @@
   left: 32%;
 }
 
-.menu__item::before {
-  top: 9%;
-  left: 18.4%;
+.menu__item .menu__icon::before {
+  top: -0.2rem;
+  left: 0;
   width: 1.5em;
   height: 1.5em;
   content: " ";
@@ -168,7 +169,7 @@
   transform: translate3d(-95%, 0, 0);
 }
 
-.menu__item.active::before {
+.menu__item.active .menu__icon::before {
   transform: scale(1);
 }
 

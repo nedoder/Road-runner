@@ -1,4 +1,31 @@
 <script setup>
+import FooterComponent from "../components/FooterComponent.vue";
+import { ref, onMounted } from "vue";
+const target = ref();
+const animate = ref(false);
+const observer = new IntersectionObserver(
+  ([entry]) => {
+    animate.value = entry.isIntersecting;
+  },
+  {
+    threshold: 0.5,
+  }
+);
+
+const target2 = ref();
+const animate2 = ref(false);
+const observer2 = new IntersectionObserver(
+  ([entry]) => {
+    animate2.value = entry.isIntersecting;
+  },
+  {
+    threshold: 0.5,
+  }
+);
+onMounted(() => {
+  observer.observe(target.value);
+  observer2.observe(target2.value);
+});
 const name = "";
 const message = "";
 </script>
@@ -6,15 +33,25 @@ const message = "";
 <template>
   <main>
     <div class="carrier-wrapper">
-      <div class="carrier-title">
-        <h1>Start <span class="highlight">working</span> with us</h1>
+      <div class="image-overlay"></div>
+      <div class="carrier-title" ref="target">
+        <h1>
+          Start
+          <transition name="fade" mode="out-in">
+            <span class="highlight" v-if="animate">working </span>
+          </transition>
+          with us
+        </h1>
       </div>
     </div>
     <div class="carrier">
-      <div class="carrier-info">
+      <div class="carrier-info" ref="target2">
         <h2>
           <span class="carrier-span">Ready to start</span>
-          We thrive for <span class="highlight">greatness</span>
+          We thrive for
+          <transition name="fade" mode="out-in">
+            <span class="highlight" v-if="animate2">greatness </span>
+          </transition>
         </h2>
         <p>
           <strong>Working with a reputable freight broker offers an additional level of reliability to your business.</strong>
@@ -103,10 +140,11 @@ const message = "";
             placeholder="Additional info (optional)"
             class="contact-message"
           ></textarea>
-          <button class="contact-button" @click="onSubmit">Send message</button>
+          <button class="contact-button" @click="onSubmit"><span>Send message</span></button>
         </div>
       </div>
     </div>
+    <FooterComponent />
   </main>
 </template>
 
@@ -174,7 +212,7 @@ const message = "";
   top: -3rem;
   font-size: 1.5rem;
   text-transform: uppercase;
-  color: var(--color-1);
+  color: var(--color-3);
   font-weight: 600;
 }
 
@@ -202,7 +240,7 @@ const message = "";
   align-items: center;
   column-gap: 1rem;
   width: 23%;
-  color: var(--color-1);
+  color: var(--color-3);
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1.4rem;
@@ -224,7 +262,7 @@ const message = "";
 .carrier-form span {
   font-size: 1rem;
   text-transform: uppercase;
-  color: var(--color-1);
+  color: var(--color-3);
   font-weight: 600;
 }
 .carrier-form input,
@@ -243,14 +281,43 @@ const message = "";
   width: 100%;
   border-radius: 0.5rem;
   outline: none;
-  border: 1px solid var(--color-2);
+  border: 1px solid var(--color-4);
   padding: 1rem 0;
-  color: var(--color-2);
+  color: var(--color-4);
   font-weight: 600;
+  overflow: hidden;
   transition: all 0.5s ease;
+}
+
+.carrier-form button span {
+  color: var(--color-4);
+  text-transform: none;
+  transition: all 0.5s ease-out;
+}
+.carrier-form button::before {
+  content: "";
+  border-radius: 0.5;
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: -100%;
+  top: 0;
+  text-align: center;
+  transition: all 0.5s ease-out;
 }
 .carrier-form button:hover {
   cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.carrier-form button:hover > span {
+  color: #fff;
+}
+.carrier-form button:hover::before {
+  width: 100%;
+  left: 0;
+  box-shadow: inset 0 0 10rem var(--color-2);
 }
 
 @media (max-width: 1200px) {

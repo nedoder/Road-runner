@@ -1,13 +1,34 @@
 <script setup>
+import FooterComponent from "../components/FooterComponent.vue";
+import { ref, onMounted } from "vue";
+const target = ref();
+const animate = ref(false);
+const observer = new IntersectionObserver(
+  ([entry]) => {
+    animate.value = entry.isIntersecting;
+  },
+  {
+    threshold: 0.5,
+  }
+);
+onMounted(() => {
+  observer.observe(target.value);
+});
 const name = "";
 const message = "";
 </script>
 
 <template>
   <main>
-    <div class="contact-wrapper">
+    <div class="contact-wrapper" ref="target">
+      <div class="image-overlay"></div>
       <div class="contact-title">
-        <h1>Let's get in <span class="highlight">touch</span></h1>
+        <h1>
+          Let's get in
+          <transition name="fade" mode="out-in">
+            <span class="highlight" v-if="animate">touch </span>
+          </transition>
+        </h1>
       </div>
     </div>
     <div class="contact">
@@ -74,9 +95,10 @@ const message = "";
           placeholder="How can we help you?"
           class="contact-message"
         ></textarea>
-        <button class="contact-button" @click="onSubmit">Send message</button>
+        <button class="contact-button" @click="onSubmit"><span>Send message</span></button>
       </div>
     </div>
+    <FooterComponent />
   </main>
 </template>
 
@@ -141,7 +163,7 @@ const message = "";
   top: -3rem;
   font-size: 1.5rem;
   text-transform: uppercase;
-  color: var(--color-1);
+  color: var(--color-3);
   font-weight: 600;
 }
 
@@ -157,7 +179,7 @@ const message = "";
 .contact-form span {
   font-size: 1rem;
   text-transform: uppercase;
-  color: var(--color-1);
+  color: var(--color-3);
   font-weight: 600;
 }
 .contact-form input,
@@ -176,18 +198,47 @@ const message = "";
   width: 100%;
   border-radius: 0.5rem;
   outline: none;
-  border: 1px solid var(--color-2);
+  border: 1px solid var(--color-4);
   padding: 1rem 0;
-  color: var(--color-2);
+  color: var(--color-4);
   font-weight: 600;
+  overflow: hidden;
   transition: all 0.5s ease;
+}
+
+.contact-form button span {
+  color: var(--color-4);
+  text-transform: none;
+  transition: all 0.5s ease-out;
+}
+.contact-form button::before {
+  content: "";
+  border-radius: 0.5;
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: -100%;
+  top: 0;
+  text-align: center;
+  transition: all 0.5s ease-out;
 }
 .contact-form button:hover {
   cursor: pointer;
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.contact-form button:hover > span {
+  color: #fff;
+}
+.contact-form button:hover::before {
+  width: 100%;
+  left: 0;
+  box-shadow: inset 0 0 10rem var(--color-2);
 }
 
 @media (max-width: 992px) {
-
   .contact {
     padding: 5rem 0;
   }
@@ -200,7 +251,13 @@ const message = "";
     padding: 2rem 0;
   }
 }
-
+@media (max-width: 450px) {
+  .contact-info p {
+    flex-direction: column;
+    row-gap: 1rem;
+    /* align-items: baseline; */
+  }
+}
 @media (max-width: 350px) {
   .contact-info h2 {
     padding: 3rem 0;

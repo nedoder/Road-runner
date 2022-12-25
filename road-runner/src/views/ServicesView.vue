@@ -1,17 +1,58 @@
-<script setup></script>
+<script setup>
+import FooterComponent from "../components/FooterComponent.vue";
+import { ref, onMounted } from "vue";
+const target = ref();
+const animate = ref(false);
+const observer = new IntersectionObserver(
+  ([entry]) => {
+    animate.value = entry.isIntersecting;
+  },
+  {
+    threshold: 0.5,
+  }
+);
+
+const target2 = ref();
+const animate2 = ref(false);
+const observer2 = new IntersectionObserver(
+  ([entry]) => {
+    animate2.value = entry.isIntersecting;
+  },
+  {
+    threshold: 0.2,
+  }
+);
+onMounted(() => {
+  observer.observe(target.value);
+  observer2.observe(target2.value);
+});
+</script>
 
 <template>
   <main>
-    <div class="services-wrapper">
+    <div class="services-wrapper" ref="target">
+      <div class="image-overlay"></div>
       <div class="services-title">
-        <h1>Our <span class="highlight">services</span></h1>
+        <h1>
+          Our
+          <transition name="fade" mode="out-in">
+            <span class="highlight" v-if="animate">services </span>
+          </transition>
+        </h1>
       </div>
     </div>
     <div class="services">
-      <div class="services-info">
+      <div class="services-info" ref="target2">
         <h2>
           <span class="services-span">What we offer</span>
-          Reliable partner in <span class="highlight">transport</span> & <span class="highlight">logistics</span>
+          Reliable partner in 
+          <transition name="fade" mode="out-in">
+            <span class="highlight" v-if="animate2">transport </span>
+          </transition>
+          &
+          <transition name="fade" mode="out-in">
+            <span class="highlight" v-if="animate2">logistics </span>
+          </transition>
         </h2>
         <p>
           <strong>Working with a reputable freight broker offers an additional level of reliability to your business.</strong>
@@ -23,7 +64,7 @@
       <span class="services-span">Services we provide</span>
       <router-link to="/full-truckload" exact class="service-item" aria-label="Full truckload" >
         <div class="service-image">
-          <img src="../assets/truck.webp" alt="Full truckload" />
+          <img src="../assets/truck.webp" alt="Full truckload" width="inherit" height="inherit" />
         </div>
         <div class="service-title">
           <p>Full Truck Load</p>
@@ -31,7 +72,7 @@
       </router-link>
       <router-link to="/drayage-service" exact class="service-item" aria-label="Drayage">
         <div class="service-image">
-          <img src="../assets/drayage.webp" alt="Drayage" />
+          <img src="../assets/drayage.webp" alt="Drayage" width="inherit" height="inherit" />
         </div>
         <div class="service-title">
           <p>Drayage</p>
@@ -39,7 +80,7 @@
       </router-link>
       <router-link to="/hazmat-trucking" exact class="service-item" aria-label="Hazmat">
         <div class="service-image">
-          <img src="../assets/hazmat.webp" alt="Hazmat" />
+          <img src="../assets/hazmat.webp" alt="Hazmat" width="inherit" height="inherit" />
         </div>
         <div class="service-title">
           <p>Hazmat</p>
@@ -47,7 +88,7 @@
       </router-link>
       <router-link to="/expedited-shipping" exact class="service-item" aria-label="Expedited shipping" >
         <div class="service-image">
-          <img src="../assets/expedited.webp" alt="Expedited shipping" />
+          <img src="../assets/expedited.webp" alt="Expedited shipping" width="inherit" height="inherit" />
         </div>
         <div class="service-title">
           <p>Expedited</p>
@@ -55,13 +96,14 @@
       </router-link>
       <router-link to="/ltl-shipping" exact class="service-item" aria-label="Ltl shipping" >
         <div class="service-image">
-          <img src="../assets/ltl.webp" alt="Expedited shipping" />
+          <img src="../assets/ltl.webp" alt="Expedited shipping" width="inherit" height="inherit" />
         </div>
         <div class="service-title">
           <p>LTL</p>
         </div>
       </router-link>
     </div>
+    <FooterComponent />
   </main>
 </template>
 
@@ -128,7 +170,7 @@
   top: -3rem;
   font-size: 1.5rem;
   text-transform: uppercase;
-  color: var(--color-1);
+  color: var(--color-3);
   font-weight: 600;
 }
 
